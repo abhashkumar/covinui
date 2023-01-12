@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+### This application is the UI for cowinNotification app, if you run cowinNotification it launches in port 3000, wheare this covinui launghed in port 3006 
+### Request initiated from covinui(port: 3006)[react js project] hits the backend  node cowinNotification js port 3000
