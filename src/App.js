@@ -23,7 +23,7 @@ class App extends  React.Component{
   }
   testComponentsList = [2,3,5].map((item) => {
     return(
-      <TestCOmponent1 id = {item} />
+      <TestCOmponent1 id = {item} darkMode = {false}/>
     )
   })
   render() {
