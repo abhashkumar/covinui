@@ -1,14 +1,16 @@
 
-import React from "react"
+import React, { useEffect } from "react"
 
-function TestCOmponent1(props)
+export function TestCOmponent1(props)
 {
     //destructuring props
     const {id} = props
 
+    console.log('Test component rendered')
     //using state
     // Array destructuring , in case of object destructuring we would have given the same name as property
     const [result, setResult] = React.useState(0);
+    const prev = React.useRef("")
     console.log(props)
     console.log(result)
 
@@ -31,7 +33,14 @@ function TestCOmponent1(props)
     const styles = {
         backgroundColor: props.darkMode ? "#222222": "#cccccc"
     }
-    
+
+
+    useEffect(() => {
+        console.log('result', result)
+        prev.current = result
+        console.log('prev', prev.current)
+    }, [result])
+
     return (
         <div>
             <div onClick = {handleClick}>        
@@ -40,6 +49,7 @@ function TestCOmponent1(props)
             <div onClick = {add}>        
                     <h1>counter </h1>
             </div>
+            <p>{prev.current}</p>
         </div>
     )
 }
@@ -82,4 +92,7 @@ first parameter function use then rathen then using async await
 
 */
 
-export default TestCOmponent1
+// export default TestCOmponent1
+
+// sometimes even after applying memoization it renders the component, read this https://www.w3schools.com/react/react_usecallback.asp 
+export const MemoziedTestMemo = React.memo(TestCOmponent1)
