@@ -61,6 +61,36 @@ Use an empty dependencies array to invoke a side-effect once after component mou
 
 3.2 Component did update
 Each time the side-effect uses props or state values, you must indicate these values as dependencies:
+
+=============== useRef
+https://dmitripavlutin.com/react-useref-guide/
+
+There are 2 rules to remember about references:
+
+The value of the reference is persisted (remains unchanged) between component re-renderings;
+Updating a reference doesn't trigger a component re-rendering.
+
+import { useRef } from 'react';
+function LogButtonClicks() {
+  const countRef = useRef(0);
+  
+  const handle = () => {
+    countRef.current++;
+    console.log(`Clicked ${countRef.current} times`);
+  };
+  console.log('I rendered!');
+  return <button onClick={handle}>Click me</button>;
+}
+
+Updating the reference value countRef.current++ doesn't trigger component re-rendering. This is demonstrated by the fact that 'I rendered!' is logged to the console just once, at initial rendering, and no re-rendering happens when the reference is updated.
+
+Another useful application of the useRef() hook is to access DOM elements directly. This is performed in 3 steps:
+
+Define the reference to access the element const elementRef = useRef();
+Assign the reference to ref attribute of the element: <div ref={elementRef}></div>;
+After mounting, elementRef.current points to the DOM element.
+
+
 */
 
 
