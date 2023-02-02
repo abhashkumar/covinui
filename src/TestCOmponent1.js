@@ -1,4 +1,69 @@
 
+/*
+
+useEffect(()=>{},[]) //this is like componentDidMount
+useEffect(()=>{}) //this will run every render
+useEffect(()=>{},[dep1, dep2]) //this will run if one on de dependency change
+
+https://dmitripavlutin.com/react-useeffect-explanation/#:~:text=useEffect(callback%2C%20dependencies)%20is,being%20props%20or%20state%20values.
+https://www.freecodecamp.org/news/react-useeffect-absolute-beginners/
+
+Side effects should be separated from the rendering process. If we need to perform a side effect, it should strictly be done after our component renders.
+
+In short, useEffect is a tool that lets us interact with the outside world but not affect the rendering or performance of the component that it's in
+
+The function passed to useEffect is a callback function. This will be called after the component renders.
+
+The second argument is an array, called the dependencies array. This array should include all of the values that our side effect relies upon.
+
+In our example above, since we are changing the title based off of a value in the outer scope, name, we need to include that within the dependencies array.
+
+What this array will do is it will check and see if a value (in this case name) has changed between renders. If so, it will execute our use effect function again.
+
+There are some subtle details to be aware of avoid mistakes with useEffect.
+
+If you do not provide the dependencies array at all and only provide a function to useEffect, it will run after every render.
+
+This can lead to problems when you're attempting to update state within your useEffect hook.
+
+If you forget to provide your dependencies correctly and you are setting a piece of local state when the state is updated, the default behavior of React is to re-render the component. And therefore, since useEffect runs after every single render without the dependencies array, we will have an infinite loop.
+
+If you are updating state within your useEffect, make sure to provide an empty dependencies array. If you do provide an empty array, which I recommend you do by default for any time that you use useEffect, this will cause the effect function to only run once after the component has rendered the first time.
+
+A common example for this is to fetch data. For a component, you may just want to fetch data once, put it in state, and then display it in your JSX.
+
+function MyComponent() {
+  const [data, setData] = useState([])  
+    
+  useEffect(() => {
+    fetchData().then(myData => setData(myData))
+    // Correct! Runs once after render with empty array
+  }, []); 
+   
+  return <ul>{data.map(item => <li key={item}>{item}</li>)}</ul>
+}
+
+function Timer() {
+  const [time, setTime] = useState(0);
+    
+  useEffect(() => {
+    let interval = setInterval(() => setTime(1), 1000); 
+
+    return () => {
+      // setInterval cleared when component unmounts
+      clearInterval(interval);
+    }
+  }, []);
+}
+
+3.1 Component did mount
+Use an empty dependencies array to invoke a side-effect once after component mounting:
+
+3.2 Component did update
+Each time the side-effect uses props or state values, you must indicate these values as dependencies:
+*/
+
+
 import React, { useEffect } from "react"
 
 export function TestCOmponent1(props)
