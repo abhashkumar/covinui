@@ -5,6 +5,7 @@ import PincodeComponent from './PincodeComponent';
 import DistrictComponent from './DistrictComponent';
 
 import  { MemoziedTestMemo, TestCOmponent1 }  from './TestCOmponent1';
+import SuggestFruit from './SuggestionSetTimeoutAndClearTimeout';
 
 class App extends  React.Component{
   constructor() {
@@ -46,6 +47,7 @@ class App extends  React.Component{
             <button type="button" name = "byPincode" onClick = {this.handleClick}>search by pincode</button>
             {this.state.isDistrictSelect ? <DistrictComponent />:<PincodeComponent/> }
         </div>
+        <SuggestFruit />
       </div>
     );
   }
