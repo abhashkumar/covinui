@@ -1,6 +1,9 @@
 
 /*
 
+A React component automatically re-renders whenever there is a change in state or props, it only takes a simple state update from anywhere in the code to automatically re-render UI elements
+
+
 useEffect(()=>{},[]) //this is like componentDidMount
 useEffect(()=>{}) //this will run every render
 useEffect(()=>{},[dep1, dep2]) //this will run if one or other dependency change
@@ -96,6 +99,8 @@ After mounting, elementRef.current points to the DOM element.
 
 import React, { useEffect } from "react"
 
+// you use destructuring in the function parameter itself, so we could have written
+// export function TestCOmponent1({id})
 export function TestCOmponent1(props)
 {
     //destructuring props
