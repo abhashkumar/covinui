@@ -1,6 +1,15 @@
 /*
 The useReducer Hook is similar to the useState Hook.
 
+
+A React component should usually contain the logic that calculates the output. But the state management logic is a different concern that should be managed in a separate place. Otherwise, you get a mix of state management and rendering logic in one place, and that's difficult to read, maintain, and test!
+
+To help you separate the concerns (rendering and state management) React provides the hook useReducer(). The hook does so by extracting the state management out of the component.
+
+The useReducer(reducer, initialState) hook accepts 2 arguments: the reducer function and the initial state. The hook then returns an array of 2 items: the current state and the dispatch function.
+
+https://dmitripavlutin.com/react-usereducer/
+
 It allows for custom state logic.
 
 If you find yourself keeping track of multiple pieces of state that rely on complex logic, useReducer may be useful.
@@ -13,6 +22,49 @@ State should be held by the highest parent component in the stack that requires 
 To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state.
 
 To do this without Context, we will need to pass the state as "props" through each nested component. This is called "prop drilling".
+
+
+react contexts ========>
+
+https://dmitripavlutin.com/react-context-and-usecontext/
+https://codesandbox.io/s/react-context-usecontext-pi5uv?file=/src/Main.js
+
+React context provides data to components no matter how deep they are in the components tree. The context is used to manage global data, e.g. global state, theme, services, user settings, and more.
+
+Using the context in React requires 3 simple steps: creating the context, providing the context, and consuming the context.
+
+
+// context.js
+import { createContext } from 'react';
+
+export const Context = createContext('Default Value');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 */

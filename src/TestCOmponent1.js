@@ -3,7 +3,7 @@
 
 useEffect(()=>{},[]) //this is like componentDidMount
 useEffect(()=>{}) //this will run every render
-useEffect(()=>{},[dep1, dep2]) //this will run if one on de dependency change
+useEffect(()=>{},[dep1, dep2]) //this will run if one or other dependency change
 
 https://dmitripavlutin.com/react-useeffect-explanation/#:~:text=useEffect(callback%2C%20dependencies)%20is,being%20props%20or%20state%20values.
 https://www.freecodecamp.org/news/react-useeffect-absolute-beginners/
@@ -110,7 +110,6 @@ export function TestCOmponent1(props)
     console.log(result)
 
     function handleClick() {
-
         setResult(0)
     }
 
