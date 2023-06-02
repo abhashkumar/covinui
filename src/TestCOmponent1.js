@@ -4,7 +4,8 @@
 A React component automatically re-renders whenever there is a change in state or props, it only takes a simple state update from anywhere in the code to automatically re-render UI elements
 
 
-useEffect(()=>{},[]) //this is like componentDidMount
+useEffect(()=>{},[]) //this is like componentDidMount(componentDidMount() is invoked immediately after a component is mounted (inserted into the tree).
+)
 useEffect(()=>{}) //this will run every render
 useEffect(()=>{},[dep1, dep2]) //this will run if one or other dependency change
 
