@@ -111,3 +111,6 @@ render(<App />, document.getElementById('root'))
 
 
 https://dev.to/otamnitram/react-query-a-practical-example-167j
+
+
+React query does exactly what we discussed, the hooks like useQuery fetch data as soon as rendering starts so you don’t have to wait until react loads the entire component as follows:

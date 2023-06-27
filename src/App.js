@@ -6,6 +6,8 @@ import DistrictComponent from './DistrictComponent';
 
 import  { MemoziedTestMemo, TestCOmponent1 }  from './TestCOmponent1';
 import SuggestFruit from './SuggestionSetTimeoutAndClearTimeout';
+import ReactStrapComponent  from './ReactStrapComponent'
+
 
 class App extends  React.Component{
   constructor() {
@@ -48,6 +50,7 @@ class App extends  React.Component{
             {this.state.isDistrictSelect ? <DistrictComponent />:<PincodeComponent/> }
         </div>
         <SuggestFruit />
+        <ReactStrapComponent/>
       </div>
     );
   }
