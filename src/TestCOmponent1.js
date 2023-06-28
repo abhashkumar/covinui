@@ -130,6 +130,7 @@ export function TestCOmponent1(props)
     }
 
     //styling using react dynamically using react
+    // To read more about styling using react refer this https://www.w3schools.com/react/react_css.asp
     const styles = {
         backgroundColor: props.darkMode ? "#222222": "#cccccc"
     }
