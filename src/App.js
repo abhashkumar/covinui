@@ -4,7 +4,7 @@ import React from 'react';
 import PincodeComponent from './PincodeComponent';
 import DistrictComponent from './DistrictComponent';
 
-import  { MemoziedTestMemo, TestCOmponent1 }  from './TestCOmponent1';
+import  { MemoziedTestMemo }  from './TestCOmponent1';
 import SuggestFruit from './SuggestionSetTimeoutAndClearTimeout';
 import ReactStrapComponent  from './ReactStrapComponent'
 
